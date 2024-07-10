@@ -19,6 +19,16 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/",(res,req)=>{
+  res.json({
+    success:true,
+    message: "Welcome to the chat app",
+  })
+})
+
+
+
+
 app.use("/api/v1/message", messageRouter);
 
 dbConnection();
